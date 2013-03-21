@@ -22,11 +22,36 @@ $(document).ready(function(e) {
 				navigator.notipication.vibrate(500);
 				break;
 			}	
+			
+
+
+ $('#izquierda').swipeleft(function(){
+   navigator.notificaion.confirm('¿que desea hacer?', function(option){
+  switch(option){
+    case 1
+    alert( "izkierda")
+      navigator.notification.beep(1)
+   break;
+    case 2:
+    alert( "derecha")
+      navigator.notification.vibrate(500);
+  } //switch
+ }, "practica 1","beep,vibrate,cancelar"); //function confirm
+ }); //function swipe
+
+
+
+
+
+
 			$('#derecha').swiperight(function(){
 				navigator.notification.alert("deslizó a la derecha", function(){},"Practica 1", "Aceptar");
 			});
 		});		
 	
 }, false);
+
+
+
 	});
 	
